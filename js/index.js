@@ -18,7 +18,7 @@ popupCloseBtn.addEventListener('click', popupClose);
 
 //=========EDIT FORM PROFILE=============
 
-let formElement = document.querySelector('.form__edit-profile');
+let formElement = document.querySelector('.form');
 
 function handleFormSubmit (evt) {
 	evt.preventDefault();
