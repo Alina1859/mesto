@@ -15,8 +15,3 @@
     height: 24.4px;
   }
 }
-
-.logo:hover {
-  cursor: pointer;
-  background-image: url("../../icons/logo-hover.svg");
-}
