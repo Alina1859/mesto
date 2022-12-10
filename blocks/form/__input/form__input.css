@@ -1,0 +1,22 @@
+.form__input {
+  min-width: 358px;
+  min-height: 27px;
+  border: none;
+  outline: none;
+}
+
+.form__input:focus {
+  outline-color: #000000;
+  outline-style: dashed;
+  outline-width: 2px;
+  opacity: 0.2;
+}
+
+@media screen and (max-width: 767px) {
+  .form__input {
+    min-width: 238px;
+    min-height: 27px;
+    border: none;
+    outline: none;
+  }
+}

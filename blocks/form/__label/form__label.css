@@ -1,0 +1,6 @@
+.form__label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+

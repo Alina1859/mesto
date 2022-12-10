@@ -1,0 +1,18 @@
+.popup {
+  display: none;
+  position: fixed;
+  padding: 195px 0;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  .popup {
+    padding: 123px 0;
+  }
+}

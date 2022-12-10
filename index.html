@@ -88,6 +88,26 @@
       <p class="footer__copyright">&copy;2022 Mesto Russia</p>
     </footer>
 
+    <div class="popup popup__edit-profile">
+      <div class="popup__container">
+        <form action="" class="form form__edit-profile">
+          <fieldset class="form__field">
+            <legend class="form__title">Редактировать профиль</legend>
+            <label for="profile-name" class="form__label">
+              <input type="text" name="name" value="Жак-Ив Кусто" placeholder="Введите имя профиля" id="profile-name" class="form__input form__input-profile-name" required>
+              <span class="form__span"></span>
+            </label>
+            <label for="profile-description" class="form__label">
+              <input type="text" name="name" value="Исследователь океана" placeholder="Введите описание профиля" id="profile-description" class="form__input form__input-profile-description" required>
+              <span class="form__span"></span>
+            </label>
+          </fieldset>
+          <button type="submit" class="popup__submit">Сохранить</button>
+        </form>
+        <button class="popup__close-btn"></button>
+      </div>
+    </div>
+
   </div>
 <script src="./js/index.js"></script>
 </body>
