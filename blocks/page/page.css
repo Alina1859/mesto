@@ -1,0 +1,15 @@
+.page {
+  padding: 45px 200px 60px 200px;
+  max-width: 880px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .page {
+    max-width: 282px;
+    padding: 28px 19px 36px 19px;
+  }
+}
+
