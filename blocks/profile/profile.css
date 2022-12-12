@@ -5,10 +5,14 @@
   padding: 40px 0 50px 0;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 800px) {
   .profile {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .profile {
     padding: 42px 0 36px 0;
-    align-items: center;
   }
 }

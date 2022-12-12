@@ -1,0 +1,7 @@
+.card__img {
+    min-height: 282px;
+    object-fit: cover;
+}
+.card__img:hover {
+    cursor: pointer;
+}

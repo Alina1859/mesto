@@ -6,6 +6,10 @@
   line-height: 1.14;
   color: #ffffff;
   margin-right: 18px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 294px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -19,5 +23,6 @@
     font-size: 27px;
     line-height: 33px;
     margin-right: 10px;
+    max-width: 189px;
   }
 }

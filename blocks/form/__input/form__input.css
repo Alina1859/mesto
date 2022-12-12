@@ -3,13 +3,11 @@
   min-height: 27px;
   border: none;
   outline: none;
-}
-
-.form__input:focus {
-  outline-color: #000000;
-  outline-style: dashed;
-  outline-width: 2px;
-  opacity: 0.2;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
 }
 
 @media screen and (max-width: 767px) {

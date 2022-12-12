@@ -3,12 +3,18 @@
   max-width: 880px;
   margin: 0 auto;
   position: relative;
+  min-width: 282px;
+}
+
+@media screen and (max-width: 1023px) {
+  .page {
+    padding: 45px 100px 60px 100px;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .page {
-    max-width: 282px;
-    padding: 28px 19px 36px 19px;
+    padding: 28px 0px 36px 0px;
   }
 }
 
