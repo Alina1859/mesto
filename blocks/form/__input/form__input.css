@@ -13,8 +13,5 @@
 @media screen and (max-width: 767px) {
   .form__input {
     min-width: 238px;
-    min-height: 27px;
-    border: none;
-    outline: none;
   }
 }
