@@ -1,5 +1,4 @@
 .header {
-  max-height: 74px;
   border-bottom: 1px solid rgba(84, 84, 84, .7);
 }
 
@@ -9,9 +8,5 @@
   }
 }
 
-@media screen and (max-width: 320px) {
-  .header {
-    max-height: 56px;
-  }
-}
+
 

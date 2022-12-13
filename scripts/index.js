@@ -14,7 +14,6 @@ const popupOpen = () => {
   nameInput.value = profileName.textContent;
   jobInput.value = profileDescription.textContent;
   popup.classList.add('popup_opened');
-
 }
 
 editBtn.addEventListener('click', popupOpen);
