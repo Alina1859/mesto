@@ -1,39 +1,86 @@
-const formElement = document.querySelector('.form');
-let nameInput = formElement.querySelector('.form__input_profile_name');
-let jobInput = formElement.querySelector('.form__input_profile_description');
-let profileName = document.querySelector('.profile__name');
-let profileDescription = document.querySelector('.profile__description');
+const initialCards = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
+];
+
+
+const formProfile = document.querySelector('.form_modal_profile');
+const nameInput = formProfile.querySelector('.form__input_profile_name');
+const descriptionInput = formProfile.querySelector('.form__input_profile_description');
+const profileName = document.querySelector('.profile__name');
+const profileDescription = document.querySelector('.profile__description');
 
 //=========OPEN MODAL EDIT PROFILE===========
 
-const popup = document.querySelector('.popup');
+const popupProfile = document.querySelector('.popup_modal_profile');
 const editBtn = document.querySelector('.profile__edit-btn');
-const popupCloseBtn = document.querySelector('.popup__close-btn');
 
-const popupOpen = () => {
+const openPopupProfile = () => {
   nameInput.value = profileName.textContent;
-  jobInput.value = profileDescription.textContent;
-  popup.classList.add('popup_opened');
+  descriptionInput.value = profileDescription.textContent;
+  popupProfile.classList.add('popup_opened');
 }
 
-editBtn.addEventListener('click', popupOpen);
+editBtn.addEventListener('click', openPopupProfile);
 
-const popupClose = () => {
-  popup.classList.remove('popup_opened');
-}
+//=========EDIT FORM SUNBIT PROFILE=============
 
-popupCloseBtn.addEventListener('click', popupClose);
-
-//=========EDIT FORM PROFILE=============
-
-
-function handleFormSubmit (evt) {
+function handleProfileFormSubmit (evt) {
 	evt.preventDefault();
 
   profileName.textContent = nameInput.value;
-  profileDescription.textContent = jobInput.value;
-  popupClose();
+  profileDescription.textContent = descriptionInput.value;
+  closePopup();
 }
 
-formElement.addEventListener('submit', handleFormSubmit);
+formProfile.addEventListener('submit', handleProfileFormSubmit);
+
+///============ADD PLACE MODAL OPEN==================
+
+const addPlaceBtn = document.querySelector('.profile__add-btn');
+const popupAddPlace = document.querySelector('.popup_modal_place');
+
+const popupAddPlaceOpen = () => {
+  popupAddPlace.classList.add('popup_opened');
+}
+
+addPlaceBtn.addEventListener('click', popupAddPlaceOpen);
+
+///===========ClOSE POPUP===================
+
+const popup = document.querySelectorAll('.popup');
+const popupCloseBtns = document.querySelectorAll('.popup__close-btn');
+
+const closePopup = () => {
+  popup.forEach(item => {
+    item.classList.remove('popup_opened');
+  });
+}
+
+popupCloseBtns.forEach(btn => {
+  btn.addEventListener('click', closePopup);
+});
+
 
