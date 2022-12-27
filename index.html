@@ -33,7 +33,7 @@
 
       <section class="elements">
         <ul class="elements__items">
-          <li class="card">
+          <!-- <li class="card">
             <img src="./images/karachaevsk-img.png" alt="замок" class="card__img">
             <div class="card__info-container">
               <h2 class="card__name">Карачаевск</h2>
@@ -74,7 +74,7 @@
               <h2 class="card__name">Карачаево-Черкессия</h2>
               <button type="button" class="card__like-btn"></button>
             </div>
-          </li>
+          </li> -->
         </ul>
       </section>
     </main>
@@ -118,9 +118,28 @@
         <button type="button" class="popup__close-btn"></button>
       </div>
     </div>
+
+    <div class="popup popup_modal_image">
+      <div class="popup__container-image">
+        <img src="" alt="" class="popup__card-image">
+        <p class="popup__image-title"></p>
+        <button type="button" class="popup__close-btn"></button>
+      </div>
+    </div>
   </div>
 
-  </div>
+  <!-- Шаблон карточки -->
+  <template id="cardTemplate">
+    <li class="card">
+      <img src="" alt="" class="card__img">
+      <div class="card__info-container">
+        <h2 class="card__name"></h2>
+        <button type="button" class="card__like-btn"></button>
+      </div>
+      <button class="card__trash-btn"></button>
+    </li>
+  </template>
+
 <script src="./scripts/index.js"></script>
 </body>
 </html>
