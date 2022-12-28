@@ -33,12 +33,12 @@ const profileDescription = document.querySelector('.profile__description');
 
 //=========OPEN/CLOSE POPUP==================
 
-const openPopup = (item) => {
-  item.classList.add('popup_opened');
+const openPopup = (popup) => {
+  popup.classList.add('popup_opened');
 };
 
-const closePopup = (item) => {
-  item.classList.remove('popup_opened');
+const closePopup = (popup) => {
+  popup.classList.remove('popup_opened');
 };
 
 const popups = document.querySelectorAll('.popup');
@@ -135,13 +135,10 @@ const createCard = (name, link) => {
 };
 
 const renderCards = (cards) => {
-  const fragment = document.createDocumentFragment();
   for(let i = 0; i < cards.length; i++) {
     const cardElement = createCard(initialCards[i].name, initialCards[i].link);
-    fragment.append(cardElement);
+    cardsContainer.append(cardElement);
   }
-
-  cardsContainer.append(fragment);
 };
 
 renderCards(initialCards);
@@ -156,14 +153,13 @@ function createAddNewPlaceCard() {
   const name = inputPlaceName.value;
   const link = inputPlaceLink.value;
   cardsContainer.insertAdjacentElement('afterBegin', createCard(name, link));
-  inputPlaceName.value = '';
-  inputPlaceLink.value = '';
 }
 
 function handlePlaceFormSubmit (evt) {
 	evt.preventDefault();
   createAddNewPlaceCard();
   closePopup(popupAddPlace);
+  evt.target.reset();
 }
 
 formAddPlace.addEventListener('submit', handlePlaceFormSubmit);
