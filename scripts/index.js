@@ -133,10 +133,10 @@ const createCard = (name, link) => {
   card.querySelector('.card__name').textContent = name;
 
   card.querySelector('.card__like-btn').addEventListener('click', likeCard);
-
   card.querySelector('.card__trash-btn').addEventListener('click', removeCard);
-
   card.querySelector('.card__img').addEventListener('click', openPopupImage);
+
+  return card;
 };
 
 const renderCards = (cards) => {
@@ -157,19 +157,18 @@ const formAddPlace = document.querySelector('.form_modal_place');
 const inputPlaceName = document.querySelector('.form__input_place_name');
 const inputPlaceLink = document.querySelector('.form__input_place_link');
 
-const createAddNewPlaceCard = () => {
+function createAddNewPlaceCard() {
   const name = inputPlaceName.value;
   const link = inputPlaceLink.value;
-  createCard(name, link);
-  return cardsContainer.insertAdjacentElement('afterBegin', card);
+  cardsContainer.insertAdjacentElement('afterBegin', createCard(name, link));
+  inputPlaceName.value = '';
+  inputPlaceLink.value = '';
 }
 
 function handlePlaceFormSubmit (evt) {
 	evt.preventDefault();
   createAddNewPlaceCard();
   closePopup(popupAddPlace);
-  inputPlaceName.value = '';
-  inputPlaceLink.value = '';
 }
 
 formAddPlace.addEventListener('submit', handlePlaceFormSubmit);
