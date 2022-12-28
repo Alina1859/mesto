@@ -42,16 +42,11 @@ const closePopup = (item) => {
 };
 
 const popups = document.querySelectorAll('.popup');
-const popupCloseBtns = document.querySelectorAll('.popup__close-btn');
+const closeButtons = document.querySelectorAll('.popup__close-btn');
 
-const closePopups = () => {
-  popups.forEach(item => {
-    closePopup(item);
-  });
-}
-
-popupCloseBtns.forEach(btn => {
-  btn.addEventListener('click', closePopups);
+closeButtons.forEach((button) => {
+  const popup = button.closest('.popup');
+  button.addEventListener('click', () => closePopup(popup));
 });
 
 //=========OPEN MODAL EDIT PROFILE===========
