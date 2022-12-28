@@ -84,15 +84,15 @@ formProfile.addEventListener('submit', handleProfileFormSubmit);
 const addPlaceBtn = document.querySelector('.profile__add-btn');
 const popupAddPlace = document.querySelector('.popup_modal_place');
 
-const popupAddPlaceOpen = () => {
+const openPopupAddPlace = () => {
   openPopup(popupAddPlace);
 }
 
-addPlaceBtn.addEventListener('click', popupAddPlaceOpen);
+addPlaceBtn.addEventListener('click', openPopupAddPlace);
 
 ///=========LIKE BTN===========
 
-const likedCard = (e) => {
+const likeCard = (e) => {
   e.target.classList.toggle('card__like-btn_active');
 };
 
@@ -110,7 +110,7 @@ const popupImage = document.querySelector('.popup_modal_image');
 const popupCardImage = document.querySelector('.popup__card-image');
 const popupCardTitle = document.querySelector('.popup__image-title');
 
-const popupImageOpen = (e) => {
+const openPopupImage = (e) => {
   popupCardImage.src = e.target.src;
   popupCardImage.alt = e.target.alt;
   popupCardTitle.textContent = e.target.alt;
@@ -132,13 +132,11 @@ const createCard = (name, link) => {
   card.querySelector('.card__img').alt = name;
   card.querySelector('.card__name').textContent = name;
 
-  card.querySelector('.card__like-btn').addEventListener('click', likedCard);
+  card.querySelector('.card__like-btn').addEventListener('click', likeCard);
 
   card.querySelector('.card__trash-btn').addEventListener('click', removeCard);
 
-  card.querySelector('.card__img').addEventListener('click', popupImageOpen);
-
-  return cardsContainer.insertAdjacentElement('afterBegin', card);
+  card.querySelector('.card__img').addEventListener('click', openPopupImage);
 };
 
 const renderCards = (cards) => {
@@ -159,11 +157,16 @@ const formAddPlace = document.querySelector('.form_modal_place');
 const inputPlaceName = document.querySelector('.form__input_place_name');
 const inputPlaceLink = document.querySelector('.form__input_place_link');
 
-function handlePlaceFormSubmit (evt) {
-	evt.preventDefault();
+const createAddNewPlaceCard = () => {
   const name = inputPlaceName.value;
   const link = inputPlaceLink.value;
   createCard(name, link);
+  return cardsContainer.insertAdjacentElement('afterBegin', card);
+}
+
+function handlePlaceFormSubmit (evt) {
+	evt.preventDefault();
+  createAddNewPlaceCard();
   closePopup(popupAddPlace);
   inputPlaceName.value = '';
   inputPlaceLink.value = '';
