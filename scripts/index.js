@@ -152,7 +152,7 @@ const inputPlaceLink = document.querySelector('.form__input_place_link');
 function createAddNewPlaceCard() {
   const name = inputPlaceName.value;
   const link = inputPlaceLink.value;
-  cardsContainer.insertAdjacentElement('afterBegin', createCard(name, link));
+  cardsContainer.prepend(createCard(name, link));
 }
 
 function handlePlaceFormSubmit (evt) {
